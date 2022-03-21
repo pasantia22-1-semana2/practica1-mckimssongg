@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+/* datos generales */
+.datos{
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+    color: #fff;
+    height: 30vh;
+}
+.datos__valores{
+    margin: 10px;
+    width: 30%;
+}
+.datos__saldoTodal_disponible{
+    margin: 10px;
+    display: inline-block;
+}
+.datos__valores__ingresos{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(0, 161, 167);
+    padding: 10px;
+
+}
+.datos__valores__egresos{
+    justify-content: space-between;
+    display: flex;
+    background-color: rgb(255, 73, 7);
+    padding: 10px;
+}
+.egresos__egresos__valor__porcentaje{
+    display: inline;
+    background-color: rgba(255, 255, 255, 0.583);
+}
+
+/* ingreso de datos----- */
+.IngresarDatos{
+    padding: 20px 0;
+    background-color: rgba(167, 167, 167, 0.542);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.formDatos{
+    display: flex;
+}
+
+/* tablas-------- */
+.tabla{
+    margin: 20px 0;
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+}
+.general{
+    flex-grow: 1;
+    margin: 10px;
+}
+.cuentaEstilo{
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.cuentaEstilo>.egresos__cuenta__valor>.egresos__porcentaje{
+    display: inline;
+}
+.cuentaEstilo--gris{
+    background-color: rgb(237, 237, 237);
+}
+.egresos__porcentaje{
+    background-color: rgba(29, 250, 0, 0.549);
+}
