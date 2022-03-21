@@ -3,6 +3,7 @@ class Egreso extends Dato{
     constructor(descripcion, valor){
         super(descripcion, valor)
         this._id = ++Egreso.contador;
+        this._percentage = 0;
     }
     get idEgreso() {
         return this._id

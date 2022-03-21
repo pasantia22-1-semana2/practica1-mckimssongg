@@ -25,32 +25,32 @@
         <section class="IngresarDatos">
             <form class="formDatos" action="" id="formDatos">
                 <div class="formDatos__tipoValor">
-                    <select>
+                    <select id="descripcion">
                         <option value="+">+</option>
                         <option value="-">-</option>
                     </select>
                 </div>
                 <div class="formDatos__descripcion">
-                    <input type="text" placeholder="Agregar descripcion">
+                    <input id="descripcion" type="text" placeholder="Agregar descripcion">
                 </div>
                 <div class="formDatos__valor">
-                    <input type="number" placeholder="Valor">
+                    <input id="valor" type="number" placeholder="Valor">
                 </div>
-                <button id="formDatos__enviar"><ion-icon name="checkmark-circle-outline"></ion-icon></button>
+                <button id="formDatos__enviar" onclick="datosCuenta()"><ion-icon name="checkmark-circle-outline"></ion-icon></button>
             </form>
         </section>
         <section class="tabla">
             <div class="tabla__ingreso general">
                 <div class="tabla__ingreso__titulo"><h3>Ingresos</h3><hr></div>
-                <div class="tabla__ingreso__cuenta cuentaEstilo">
+                <!-- <div class="tabla__ingreso__cuenta cuentaEstilo">
                     <div class="ingresos__cuenta__descripcion">viajes</div>
                     <div class="ingresos__cuenta__valor">+XXX</div>
                 </div>
-                <hr>
+                <hr> -->
             </div>
             <div class="tabla__egresos general">
                 <div class="tabla__egresos__titulo"><h3>egresoss</h3><hr></div>
-                <div class="tabla__egresos__cuenta cuentaEstilo">
+                <!-- <div class="tabla__egresos__cuenta cuentaEstilo">
                     <div class="egresos__cuenta__descripcion">viajes</div>
                     <div class="egresos__cuenta__valor">+XXX <div class="egresos__porcentaje">XX%</div></div> 
                 </div>
@@ -59,7 +59,7 @@
                     <div class="egresos__cuenta__descripcion">viajes</div>
                     <div class="egresos__cuenta__valor">+XXX <div class="egresos__porcentaje">XX%</div></div>
                 </div>
-                <hr>
+                <hr> -->
             </div>
         </section>
     </div>
