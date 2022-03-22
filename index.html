@@ -15,32 +15,32 @@
         <section class="datos">
             <div class="datos__saldoTodal">
                 <h1>Presupuesto Disponible</h1>
-                <h2>$<div class="datos__saldoTodal_disponible Lineal">XXX</div></h2>
+                <h2>$<div id="total_presupuesto" class="datos__saldoTodal_disponible Lineal">0</div></h2>
             </div>
             <div class="datos__valores">
-                <div class="datos__valores__ingresos">ingresostotales <div class=ingresos__valor">XXXX </div> </div>
-                <div class="datos__valores__egresos">egresostotlaes <div class="egresos__valor">XXXX <div class="egresos__egresos__valor__porcentaje">XX%</div></div></div>
+                <div class="datos__valores__ingresos">ingresos totales <div id="ingresosT"  class=ingresos__valor">0 </div> </div>
+                <div  class="datos__valores__egresos">egresos totlaes <div id="egresosT" class="egresos__valor">0 <div class="egresos__egresos__valor__porcentaje" id="porcentajeTotal">0%</div></div></div>
             </div>
         </section>
         <section class="IngresarDatos">
-            <form class="formDatos" action="" id="formDatos">
+            <form class="formDatos" action="" id="formularioDatos">
                 <div class="formDatos__tipoValor">
-                    <select id="descripcion">
+                    <select id="tipoValor">
                         <option value="+">+</option>
                         <option value="-">-</option>
                     </select>
                 </div>
                 <div class="formDatos__descripcion">
-                    <input id="descripcion" type="text" placeholder="Agregar descripcion">
+                    <input id="descripcion" type="text" placeholder="Agregar descripcion" required="">
                 </div>
                 <div class="formDatos__valor">
-                    <input id="valor" type="number" placeholder="Valor">
-                </div>
-                <button id="formDatos__enviar" onclick="datosCuenta()"><ion-icon name="checkmark-circle-outline"></ion-icon></button>
+                    <input id="valor" type="number" placeholder="Valor" required>
+                </div class="formDatos__enviar">
             </form>
+            <button id="formDatos__enviar"  type = "submit" onclick="datosCuenta()"><ion-icon name="checkmark-circle-outline"></ion-icon></button>
         </section>
         <section class="tabla">
-            <div class="tabla__ingreso general">
+            <div id="tbl_ingresos" class="tabla__ingreso general">
                 <div class="tabla__ingreso__titulo"><h3>Ingresos</h3><hr></div>
                 <!-- <div class="tabla__ingreso__cuenta cuentaEstilo">
                     <div class="ingresos__cuenta__descripcion">viajes</div>
@@ -48,8 +48,8 @@
                 </div>
                 <hr> -->
             </div>
-            <div id="tablaEgresos" class="tabla__egresos general">
-                <div class="tabla__egresos__titulo"><h3>egresoss</h3><hr></div>
+            <div id="tbl_egreso" class="tabla__egresos general">
+                <div class="tabla__egresos__titulo"><h3>Egresos</h3><hr></div>
                 <!-- <div class="tabla__egresos__cuenta cuentaEstilo">
                     <div class="egresos__cuenta__descripcion">viajes</div>
                     <div class="egresos__cuenta__valor">+XXX <div class="egresos__porcentaje">XX%</div></div> 
@@ -63,11 +63,11 @@
             </div>
         </section>
     </div>
-    <!-- <script src="js/index.js"></script>
     <script src="js/datos.js"></script>
     <script src="js/ingreso.js"></script>
-    <script src="js/egreso.js"></script> -->
-    <script src="./js/index.js"></script>
+    <script src="js/egreso.js"></script>
+    <script src="js/app.js"></script>
+    <!-- <script src="./js/index.js"></script> -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 </body>
 </html>

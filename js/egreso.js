@@ -25,7 +25,7 @@ class Egreso{
         return `
         <div class="tabla__egresos__cuenta cuentaEstilo">
             <div class="egresos__cuenta__descripcion">${this._descripcion}</div>
-            <div class="egresos__cuenta__valor">${this._valor}</div> 
+            <div class="egresos__cuenta__valor">$ ${this._valor} <div class="egresos__porcentaje">$ ${_Porcentaje(this._valor)}</div></div> 
         </div>
         <hr>`
     }

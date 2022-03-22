@@ -113,6 +113,9 @@ class Presupuesto{
 }
 
 
+const tablaIngreso = document.querySelector('tabla__ingreso')
+
+
 function datosCuenta(){
     const Presupueston = new Presupuesto()
     Presupueston.agregarIngreso(PrimerIngreso)
