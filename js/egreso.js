@@ -1,12 +1,25 @@
-class Egreso extends Dato{
+class Egreso{
     static contadorEgreso = 0;
     constructor(descripcion, valor){
-        super(descripcion, valor)
-        this._id = ++Egreso.contador;
+        this._descripcion = descripcion;
+        this._valor = valor;
+        this._id = ++Egreso.contadorEgreso;
         this._percentage = 0;
     }
     get idEgreso() {
         return this._id
+    }
+    get descripcion(){
+        return this._descripcion;
+    }
+    set descripcion(descripcion){
+        this._descripcion = descripcion;
+    }
+    get valor(){
+        return this._valor;
+    }
+    set valor(valor){
+        this._valor = valor;
     }
     toString(){
         return `
@@ -17,3 +30,5 @@ class Egreso extends Dato{
         <hr>`
     }
 }
+const primerEgreso = new Egreso("prueba",200)
+// console.log(primerEgreso.toString())

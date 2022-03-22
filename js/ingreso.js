@@ -1,11 +1,24 @@
-class Ingreso extends Dato{
+class Ingreso{
     static contadoringreso = 0;
     constructor(descripcion, valor){
-        super(descripcion, valor)
-        this._id = ++Ingreso.contador;
+        this._descripcion = descripcion;
+        this._valor = valor;
+        this._id = ++Ingreso.contadoringreso;
     }
     get idingreso() {
         return this._id
+    }
+    get descripcion(){
+        return this._descripcion;
+    }
+    set descripcion(descripcion){
+        this._descripcion = descripcion;
+    }
+    get valor(){
+        return this._valor;
+    }
+    set valor(valor){
+        this._valor = valor;
     }
     toString(){
         return `
@@ -16,3 +29,6 @@ class Ingreso extends Dato{
         <hr>`
     }
 }
+
+const PrimerIngreso = new Ingreso("Prueba",200)
+// console.log(PrimerIngreso.toString())
