@@ -1,3 +1,4 @@
+
 class Egreso{
     static contadorEgreso = 0;
     constructor(descripcion, valor){
@@ -25,10 +26,12 @@ class Egreso{
         return `
         <div class="tabla__egresos__cuenta cuentaEstilo">
             <div class="egresos__cuenta__descripcion">${this._descripcion}</div>
-            <div class="egresos__cuenta__valor">$ ${this._valor} <div class="egresos__porcentaje">$ ${_Porcentaje(this._valor)}</div></div> 
+            <div class="egresos__cuenta__valor"> ${formatMoney(this._valor)} <div class="egresos__porcentaje">
+            ${_Porcentaje((this._valor/totalEgresos())*1)}</div><button id="formDatos__enviar"  type = "submit" onclick="Eliminar()"><ion-icon name="close-circle-outline"></ion-icon></button></div> 
         </div>
         <hr>`
     }
 }
-const primerEgreso = new Egreso("prueba",200)
+
+// const primerEgreso = new Egreso("prueba",200)
 // console.log(primerEgreso.toString())

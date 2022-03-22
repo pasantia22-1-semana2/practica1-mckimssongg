@@ -24,11 +24,11 @@ class Ingreso{
         return `
         <div class="tabla__ingreso__cuenta cuentaEstilo">
         <div class="ingresos__cuenta__descripcion">${this._descripcion}</div>
-        <div class="ingresos__cuenta__valor">$ ${this._valor}</div>
+        <div class="ingresos__cuenta__valor"> ${formatMoney(this._valor)}<button id="formDatos__enviar"  type = "submit" onclick="Eliminar()"><ion-icon name="close-circle-outline"></ion-icon></button></div>
         </div>
         <hr>`
     }
 }
 
-const PrimerIngreso = new Ingreso("Prueba",200)
+// const PrimerIngreso = new Ingreso("Prueba",200)
 // console.log(PrimerIngreso.toString())

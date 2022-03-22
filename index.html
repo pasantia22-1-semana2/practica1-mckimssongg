@@ -15,11 +15,11 @@
         <section class="datos">
             <div class="datos__saldoTodal">
                 <h1>Presupuesto Disponible</h1>
-                <h2>$<div id="total_presupuesto" class="datos__saldoTodal_disponible Lineal">0</div></h2>
+                <h2><div id="total_presupuesto" class="datos__saldoTodal_disponible Lineal">0</div></h2>
             </div>
             <div class="datos__valores">
-                <div class="datos__valores__ingresos">ingresos totales <div id="ingresosT"  class=ingresos__valor">0 </div> </div>
-                <div  class="datos__valores__egresos">egresos totlaes <div id="egresosT" class="egresos__valor">0 <div class="egresos__egresos__valor__porcentaje" id="porcentajeTotal">0%</div></div></div>
+                <div class="datos__valores__ingresos">Ingresos totales <div id="ingresosT"  class=ingresos__valor">0 </div> </div>
+                <div  class="datos__valores__egresos">Egresos totales <div id="egresosT" class="egresos__valor">0 <div class="egresos__egresos__valor__porcentaje" id="porcentajeTotal">0</div></div></div>
             </div>
         </section>
         <section class="IngresarDatos">
@@ -40,26 +40,31 @@
             <button id="formDatos__enviar"  type = "submit" onclick="datosCuenta()"><ion-icon name="checkmark-circle-outline"></ion-icon></button>
         </section>
         <section class="tabla">
-            <div id="tbl_ingresos" class="tabla__ingreso general">
-                <div class="tabla__ingreso__titulo"><h3>Ingresos</h3><hr></div>
-                <!-- <div class="tabla__ingreso__cuenta cuentaEstilo">
-                    <div class="ingresos__cuenta__descripcion">viajes</div>
-                    <div class="ingresos__cuenta__valor">+XXX</div>
-                </div>
-                <hr> -->
+            
+            
+            <div class="tabla__ingreso__titulo tabla__ingreso general"><h3>Ingresos</h3><hr>
+                    <div id="tbl_ingresos" class="">
+                        <!-- <div class="tabla__ingreso__cuenta cuentaEstilo">
+                        <div class="ingresos__cuenta__descripcion">viajes</div>
+                        <div class="ingresos__cuenta__valor">+XXX</div>
+                        </div>
+                        <hr> -->
+                    </div>
             </div>
-            <div id="tbl_egreso" class="tabla__egresos general">
-                <div class="tabla__egresos__titulo"><h3>Egresos</h3><hr></div>
-                <!-- <div class="tabla__egresos__cuenta cuentaEstilo">
-                    <div class="egresos__cuenta__descripcion">viajes</div>
-                    <div class="egresos__cuenta__valor">+XXX <div class="egresos__porcentaje">XX%</div></div> 
-                </div>
-                <hr>
-                <div class="tabla__egresos__cuenta cuentaEstilo cuentaEstilo--gris">
-                    <div class="egresos__cuenta__descripcion">viajes</div>
-                    <div class="egresos__cuenta__valor">+XXX <div class="egresos__porcentaje">XX%</div></div>
-                </div>
-                <hr> -->
+            
+                <div class="tabla__egresos__titulo tabla__egresos general"><h3>Egresos</h3><hr>
+                    <div id="tbl_egreso" class="">
+                        <!-- <div class="tabla__egresos__cuenta cuentaEstilo">
+                        <div class="egresos__cuenta__descripcion">viajes</div>
+                        <div class="egresos__cuenta__valor">+XXX <div class="egresos__porcentaje">XX%</div></div> 
+                        </div>
+                        <hr>
+                        <div class="tabla__egresos__cuenta cuentaEstilo cuentaEstilo--gris">
+                            <div class="egresos__cuenta__descripcion">viajes</div>
+                            <div class="egresos__cuenta__valor">+XXX <div class="egresos__porcentaje">XX%</div></div>
+                        </div>
+                        <hr> -->
+                    </div>
             </div>
         </section>
     </div>

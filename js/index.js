@@ -113,13 +113,13 @@ class Presupuesto{
 }
 
 
-const tablaIngreso = document.querySelector('tabla__ingreso')
+// const tablaIngreso = document.querySelector('tabla__ingreso')
 
 
-function datosCuenta(){
-    const Presupueston = new Presupuesto()
-    Presupueston.agregarIngreso(PrimerIngreso)
-    console.log(Presupueston.mostraIngresos())
-}
+// function datosCuenta(){
+//     const Presupueston = new Presupuesto()
+//     Presupueston.agregarIngreso(PrimerIngreso)
+//     console.log(Presupueston.mostraIngresos())
+// }
 
-// Presupuesto.agregarIngreso(PrimerIngreso);
+// // Presupuesto.agregarIngreso(PrimerIngreso);

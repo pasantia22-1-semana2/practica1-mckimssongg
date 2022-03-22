@@ -1,14 +1,24 @@
-var totalEgresos = 0
-var totalIngresos = 0
+var ingreso1 = [
+    new Ingreso('Salario', 5000.00)
+]
+
+var egreso1 = [
+    new Egreso('PC master Race', 500.00),
+    new Egreso('RTX 3090', 1000.00)
+]
+
 class Presupuesto{
     static conntadorPresupuesto = 0;
     constructor(){
-        this._ingresos = []
-        this._egresos = []
+        this._ingresos = ingreso1
+        this._egresos = egreso1
         this._id = ++Presupuesto.conntadorPresupuesto;
     }
     get ingresos(){
         return this._ingresos;
+    }
+    get egresos(){
+        return this._egresos;
     }
     agregarEgreso(dato){
         this._egresos.push(dato);
@@ -30,18 +40,6 @@ class Presupuesto{
         }
         return egresoslista;
     }
-    totalIngresos(){
-        for(let cuenta in this._ingresos){
-            totalIngresos += this._ingresos[cuenta]
-        }
-        return totalIngresos;
-    }
-    totalEgresos(){
-        for(let cuenta in this._ingresos){
-            totalEgresos += this._ingresos[cuenta]
-        }
-        return totalEgresos;
-    }
 }
 
 const Presupuesto1 = new Presupuesto()
@@ -52,25 +50,49 @@ const formatMoney = (valor) =>{
     return valor.toLocaleString('en-US',{style:'currency', currency:'USD', minimumFractionDigits:2});
 }
 const _Porcentaje = (valor) =>{
-    return valor.toLocaleString({style:'percent', minimumFractionDigits:2});
+    return valor.toLocaleString('en-US', {style:'percent', minimumFractionDigits:1});
 }
 
+
+function totalIngresos(){
+    var totalIngresos = 0
+    for (i in Presupuesto1._ingresos){
+        totalIngresos += Presupuesto1._ingresos[i].valor
+    }
+    // return console.log(totalIngresos);
+    return totalIngresos;
+}
+function totalEgresos(){
+    var totalEgresos = 0
+    for (i in Presupuesto1._egresos){
+        totalEgresos += Presupuesto1._egresos[i].valor
+    }
+    // return console.log(totalEgresos);
+    return totalEgresos
+}
+// totalEgresos();
+// totalEgresos();
+
+// let porcentajeEgreso = totalEgresos()/totalIngresos()
+// let porcentajeYATOTAL = _Porcentaje(porcentajeEgreso)
 
 function CalTotales(){
-    let totalPresupuesto = (parseInt(Presupuesto1.totalIngresos) - parseInt(Presupuesto1.totalEgresos))
+    let totalPresupuesto = totalIngresos()-totalEgresos()
+    // return console.log(totalPresupuesto)
     let total_presupuesto = document.querySelector('#total_presupuesto')
-    let porcentajeTotal = document.querySelector('#porcentajeTotal')
+    total_presupuesto.innerHTML = `${formatMoney(totalPresupuesto)}`
+    
+    
     let egresosT = document.querySelector('#egresosT')
-    Presupuesto1.totalIngresos
-    Presupuesto1.totalEgresos
-    let porcentajeYATOTAL = _Porcentaje(totalPresupuesto)
-    porcentajeTotal.innerHTML = `${porcentajeYATOTAL}`
-    egresosT.innerHTML = `${totalIngresos} <div class="egresos__egresos__valor__porcentaje" id="porcentajeTotal">${porcentajeYATOTAL}</div>`
     let ingresosT = document.querySelector('#ingresosT')
-     ingresosT.innerHTML = `${totalEgresos}`
-    total_presupuesto.innerHTML = `${totalPresupuesto}`
+    
+    let porcentajeEgreso = totalEgresos()/totalIngresos()
+    let porcentajeYATOTAL = _Porcentaje(porcentajeEgreso)
+    console.log(porcentajeYATOTAL)
+    egresosT.innerHTML = `${totalEgresos()} <div class="egresos__egresos__valor__porcentaje" id="porcentajeTotal">${porcentajeYATOTAL}</div>`
+    ingresosT.innerHTML = `${totalIngresos()}`
 }
-
+// CalTotales()
 
 function datosCuenta(){
     let tablaIngreso = document.querySelector('#tbl_ingresos')
@@ -90,8 +112,17 @@ function datosCuenta(){
     // console.log(Presupuesto1.ingresos)
     // Presupuesto1.agregarIngreso(PrimerIngreso)
     // console.log(Presupuesto1.ingresos)
-    tablaIngreso.innerHTML += Presupuesto1.mostraIngresos()
-    tablaEgreso.innerHTML += Presupuesto1.mostraEgresos()
+    tablaIngreso.innerHTML = Presupuesto1.mostraIngresos()
+    tablaEgreso.innerHTML = Presupuesto1.mostraEgresos()
     CalTotales()
     console.log("todo chill")
 }
+
+// let tablaIngreso = document.querySelector('#tbl_ingresos')
+// let tablaEgreso = document.querySelector('#tbl_egreso')
+// let formularioDatos = document.querySelector('#formularioDatos')
+// let tipoValor = formularioDatos['tipoValor'].value
+// let descripcion = formularioDatos['descripcion'].value
+// let valor = formularioDatos['valor'].value
+// tablaIngreso.innerHTML += Presupuesto1.mostraIngresos()
+// tablaEgreso.innerHTML += Presupuesto1.mostraEgresos()
