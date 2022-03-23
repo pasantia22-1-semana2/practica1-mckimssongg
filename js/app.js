@@ -50,7 +50,7 @@ const formatMoney = (valor) =>{
     return valor.toLocaleString('en-US',{style:'currency', currency:'USD', minimumFractionDigits:2});
 }
 const _Porcentaje = (valor) =>{
-    return valor.toLocaleString('en-US', {style:'percent', minimumFractionDigits:1});
+    return valor.toLocaleString('en-US',{style:'percent', minimumFractionDigits:1});
 }
 
 
@@ -75,26 +75,27 @@ function totalEgresos(){
 
 // let porcentajeEgreso = totalEgresos()/totalIngresos()
 // let porcentajeYATOTAL = _Porcentaje(porcentajeEgreso)
-
+let totalPresupuesto
+let total_presupuesto = document.querySelector('#total_presupuesto')
+let egresosT = document.querySelector('#egresosT')
+let ingresosT = document.querySelector('#ingresosT')
+    
 function CalTotales(){
-    let totalPresupuesto = totalIngresos()-totalEgresos()
+    totalPresupuesto = totalIngresos() - totalEgresos()
     // return console.log(totalPresupuesto)
-    let total_presupuesto = document.querySelector('#total_presupuesto')
-    total_presupuesto.innerHTML = `${formatMoney(totalPresupuesto)}`
-    
-    
-    let egresosT = document.querySelector('#egresosT')
-    let ingresosT = document.querySelector('#ingresosT')
+    total_presupuesto.innerHTML ='';
+    total_presupuesto.innerHTML = formatMoney(totalPresupuesto)
     
     let porcentajeEgreso = totalEgresos()/totalIngresos()
     let porcentajeYATOTAL = _Porcentaje(porcentajeEgreso)
-    console.log(porcentajeYATOTAL)
+    // console.log(porcentajeYATOTAL)
     egresosT.innerHTML = `${totalEgresos()} <div class="egresos__egresos__valor__porcentaje" id="porcentajeTotal">${porcentajeYATOTAL}</div>`
     ingresosT.innerHTML = `${totalIngresos()}`
 }
 // CalTotales()
 
 function datosCuenta(){
+    let error = document.getElementById('error')
     let tablaIngreso = document.querySelector('#tbl_ingresos')
     let tablaEgreso = document.querySelector('#tbl_egreso')
     let formularioDatos = document.querySelector('#formularioDatos')
@@ -102,20 +103,46 @@ function datosCuenta(){
     let descripcion = formularioDatos['descripcion'].value
     let valor = formularioDatos['valor'].value
     if (tipoValor == "+"){
-        const nuevoIngreso = new Ingreso(descripcion,valor)
-        Presupuesto1.agregarIngreso(nuevoIngreso)
-    }
+        if (descripcion == "" && valor == ""){
+            error.style.display = "block"
+            setTimeout(()=>{
+                error.style.display = "none"
+            }, 2000)
+            
+        }
+        else{
+            // const nuevoIngreso = new Ingreso(descripcion,valor)
+            Presupuesto1.agregarIngreso(new Ingreso(descripcion,valor))
+            tablaIngreso.innerHTML = Presupuesto1.mostraIngresos()
+            tablaEgreso.innerHTML = Presupuesto1.mostraEgresos()
+            CalTotales()
+        }
+        }
     if (tipoValor == "-"){
-        const nuevoEgreso = new Egreso(descripcion,valor)
-        Presupuesto1.agregarEgreso(nuevoEgreso)
+        if (descripcion == "" && valor == ""){
+            error.style.display = "block"
+            setTimeout(()=>{
+                error.style.display = "none"
+            }, 2000)
+            
+        }
+        else{
+        // const nuevoEgreso = new Egreso(descripcion,valor)
+        Presupuesto1.agregarEgreso(new Egreso(descripcion,valor))
+        tablaIngreso.innerHTML = Presupuesto1.mostraIngresos()
+        tablaEgreso.innerHTML = Presupuesto1.mostraEgresos()
+        CalTotales()
+        }
     }
     // console.log(Presupuesto1.ingresos)
     // Presupuesto1.agregarIngreso(PrimerIngreso)
     // console.log(Presupuesto1.ingresos)
-    tablaIngreso.innerHTML = Presupuesto1.mostraIngresos()
-    tablaEgreso.innerHTML = Presupuesto1.mostraEgresos()
-    CalTotales()
     console.log("todo chill")
+}
+function BorrarRegistro(){
+    let formularioDatos = document.querySelector('#formularioDatos')
+    formularioDatos['descripcion'].value = '';
+    formularioDatos['valor'].value  = '';
 }
 
 // let tablaIngreso = document.querySelector('#tbl_ingresos')

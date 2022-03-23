@@ -24,21 +24,25 @@
         </section>
         <section class="IngresarDatos">
             <form class="formDatos" action="" id="formularioDatos">
-                <div class="formDatos__tipoValor">
+                <div class="formDatos__tipoValor espacioInputs">
                     <select id="tipoValor">
                         <option value="+">+</option>
                         <option value="-">-</option>
                     </select>
                 </div>
                 <div class="formDatos__descripcion">
-                    <input id="descripcion" type="text" placeholder="Agregar descripcion" required="">
+                    <input id="descripcion" type="text" placeholder="Agregar descripcion" value="prueba">
                 </div>
                 <div class="formDatos__valor">
-                    <input id="valor" type="number" placeholder="Valor" required>
+                    <input id="valor" type="number" placeholder="Valor" value=200>
                 </div class="formDatos__enviar">
             </form>
-            <button id="formDatos__enviar"  type = "submit" onclick="datosCuenta()"><ion-icon name="checkmark-circle-outline"></ion-icon></button>
+            <button id="formDatos__enviar"  type = "submit" onclick="datosCuenta()">Confirmar <ion-icon name="checkmark-circle-outline"></ion-icon></button>
+            <button id="formDatos__enviar"  type = "submit" onclick="BorrarRegistro()">Resetear<ion-icon name="close-circle-outline"></ion-icon></button>
+            
+            
         </section>
+        <div id="error">Asegurate de tener una descripcion y un valor  <ion-icon name="thumbs-up-outline"></ion-icon></div>
         <section class="tabla">
             
             

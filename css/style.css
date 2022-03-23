@@ -21,7 +21,6 @@
     text-align: center;
     justify-content: space-evenly;
     color: #fff;
-    height: 30vh;
 }
 .datos__valores{
     margin: 10px;
@@ -36,12 +35,13 @@
 .datos__valores__ingresos{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: rgb(0, 161, 167);
     padding: 10px;
     width: 100%;
     margin: 10px 0;
-    box-shadow: 6px 6px 0px 0px #f3f3f3
-
+    box-shadow: 6px 6px 0px 0px #f3f3f3;
+    transform: translateX(-10px);
 }
 .datos__valores__egresos{
     justify-content: space-between;
@@ -50,12 +50,13 @@
     background-color: rgb(255, 73, 7);
     padding: 10px;
     margin: 10px 0;
-    box-shadow: 6px 6px 0px 0px #f3f3f3
+    box-shadow: 6px 6px 0px 0px #f3f3f3;
+    transform: translateX(-10px);
+    
 }
 .egresos__egresos__valor__porcentaje{
     display: inline;
-    background-color: rgba(255, 255, 255, 0.583);
-    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.323);
     border-radius: 3px;
 }
 
@@ -66,28 +67,36 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .formDatos{
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
 }
-.formDatos__enviar>button{
+.formDatos__enviar>button>ion-icon{
     background-color:aqua;
 }
 /* tablas-------- */
 .tabla{
     margin: 20px 0;
     display: flex;
+    flex-wrap: wrap;
     width: 80%;
     justify-content: space-evenly;
 }
 .general{
+    text-align: center;
     flex-grow: 1;
     margin: 10px;
 }
 .cuentaEstilo{
     padding: 10px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 .cuentaEstilo>.egresos__cuenta__valor>.egresos__porcentaje{
     display: inline;
@@ -97,4 +106,17 @@
 }
 .egresos__porcentaje{
     background-color: rgba(29, 250, 0, 0.549);
+}
+
+/* Otras cosas */
+#error{
+    display: none;
+    margin-top: 20px;
+    max-width: 170px;
+    background-color: rgba(255, 124, 124, 0.638);
+    border-radius: 3px;
+    text-align: center;
+}
+ion-icon{
+    transform: translateY(20%)
 }
